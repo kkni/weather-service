@@ -1,0 +1,27 @@
+{
+  "name": "weather-service",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/kkni/weather-service.git",
+  "author": "aiden",
+  "license": "MIT",
+  "dependencies": {
+    "@valkey/valkey-glide": "^1.2.1",
+    "axios": "^1.7.9",
+    "express": "^4.21.2",
+    "http-status": "^2.1.0",
+    "zod": "^3.24.1"
+  },
+  "scripts": {
+    "start": "node dist/index.js",
+    "dev": "nodemon --exec ts-node src/index.ts",
+    "build": "tsc"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.13.1",
+    "nodemon": "^3.1.9",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.3"
+  }
+}
