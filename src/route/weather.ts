@@ -33,6 +33,7 @@ router.get('/by-city',  /*validateRequestQuery(squadScheme), */async (req: Reque
         const formattedDate = today ? today : date.toISOString().split("T")[0];
         const result = await apiClient.get(`/timeline/${country},${city}/${formattedDate}/${formattedDate}`)
         if(result.data){
+            let saveRes = await setCache(key, result.data, 60 * 60 * 6)
             res.status(HttpStatusCode.Ok).send(result.data)
         }else{
 

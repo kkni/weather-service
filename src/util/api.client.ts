@@ -11,11 +11,6 @@ interface CustomAxiosResponse<T = any> extends AxiosResponse<T> {
   config: CustomAxiosRequestConfig;
 }
 
-// https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/Canada%2CThetford-Mines/2025-02-03/2025-02-03?
-// unitGroup=metric&
-// elements=datetime,datetimeEpoch,name,address,tempmax,tempmin,temp,humidity,conditions,icon&
-// include=days&
-// key=U9CKYP6Y4HF6L2863RRMLD546&contentType=json
 
 const apiClient = axios.create({
   baseURL: 'https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services',

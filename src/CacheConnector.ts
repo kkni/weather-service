@@ -24,7 +24,7 @@ async function connect() {
 }
 
 async function setCache(key: string, value: string, ttl: number) {
-    const result = await client.set(key, value, { expiry: { type: TimeUnit.Seconds, count: 60 * 60 * 4 } })
+    const result = await client.set(key, value, { expiry: { type: TimeUnit.Seconds, count: ttl } })
 
     if (result === "OK") {
 
