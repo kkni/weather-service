@@ -2,11 +2,11 @@ import express, { Request, Response , Router} from "express";
 import weather from './route/weather'
 import {initCacheServer} from "./CacheConnector"
 const app = express();
-const PORT = process.env.PORT || 1818;
 
 import dotenv from 'dotenv';
-
 dotenv.config()
+
+const PORT = process.env.PORT || 1818;
 
 // JSON 미들웨어 사용
 app.use(express.json());
