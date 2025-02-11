@@ -1,13 +1,15 @@
 import { GlideClient, TimeUnit } from "@valkey/valkey-glide";
 
-
 let client: GlideClient
 
 async function connect() {
     try {
         // Valkey 서버 연결
+
+        console.log(process.env.VALKEY_HOST)
+        
         client = await GlideClient.createClient({
-            addresses: [{ host: process.env.REDIS_HOST || "", port: 6379 }],
+            addresses: [{ host: process.env.VALKEY_HOST || "", port: 6379 }],
             clientName: "my_valkey_client", useTLS:true
         });
 
@@ -35,10 +37,8 @@ async function getCache(key: string) {
 }
 
 
-function init() {
+function initCacheServer() {
     connect()
 }
 
-init()
-
-export { setCache, getCache, client }
+export { setCache, getCache, initCacheServer }
