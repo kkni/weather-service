@@ -24,6 +24,7 @@ router.get('/by-city',  /*validateRequestQuery(squadScheme), */async (req: Reque
 
     const key = `weather:${country}:${city}`
     const isCache = await getCache(key)
+    console.log(isCache)
 
     if (isCache) {
         res.status(HttpStatusCode.Ok).send(isCache)
